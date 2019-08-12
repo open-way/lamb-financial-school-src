@@ -1,0 +1,63 @@
+<!-- <div class="content-login-page">
+    <h2 class="title">
+        <div class="logo" routerLink="/">
+            <img src="assets/logos/lamb-logo-full-color.svg" alt="Lamb Logo">
+        </div>
+    </h2>
+    <small class="form-text sub-title">Bienvenido al sistema financiero, conectate con:</small>
+    <div class="row text-center">
+        <div class="col-md-12 col-sm-12">
+            <img class="btn-login-oauth-upeu" src="assets/jpg/logo-upeu.jpg" alt="Lamb Logo">
+
+            <small class="form-text sub-title" *ngIf="user; else changeUser">
+                <span>Usted esta con el usuario:</span> <br>
+                <span><strong>{{ user?.full_name }}</strong></span> <br>
+                <button class=" btn" (click)="logginWithErpAuth()"><strong>{{ user?.email }}</strong></button> <br>
+                <a class="lamb-link" (click)="onChangeUser()"> <strong>Cambiar de usuario</strong> </a>
+            </small>
+            <ng-template #changeUser>
+                <br>
+                <br>
+                <button class="btn" (click)="logginWithErpAuth()">Ingrese con el usuario UPeU</button>
+            </ng-template>
+        </div>
+    </div>
+    <div class="links">
+        <small class="form-text">
+            No tienes una cuenta?
+            <a routerLink="../register">
+                <strong>Regístrate</strong>
+            </a>
+        </small>
+    </div>
+</div> -->
+
+<div class="lamb-all">
+    <div class="content-login-page">
+        <div class="logo" routerLink="/">
+            <img class="full-color" src="assets/logos/lamb-logo-black-and-white.svg" alt="Lamb">
+        </div>
+        <br>
+
+        <small class="form-text sub-title" *ngIf="user; ">
+            <span>Usted esta con el usuario:</span> <br>
+            <span class="lamb-link2"><strong>{{ user?.email }}</strong></span>
+        </small>
+        <br>
+        <div class="logo">
+            <img class="lamb-connet" (click)="logginWithErpAuth()" src="assets/images/apps/conectate.png"
+                alt="Lamb"><br>
+            <br>
+            <small *ngIf="user; else ">
+                <a class="lamb-link" (click)="onChangeUser()">
+                    <strong> Cambiar usuario </strong>
+                </a>
+            </small>
+        </div>
+    </div>
+
+    <div class="logo-iasd right">
+        <img class="lamb-icon iasdLogo" src="assets/logos/iasd-logo-black2.svg" alt="Lamb">
+    </div>
+
+</div>

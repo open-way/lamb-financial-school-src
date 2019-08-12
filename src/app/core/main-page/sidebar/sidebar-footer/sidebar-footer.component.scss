@@ -1,0 +1,21 @@
+@import 'themes';
+
+@include nb-install-component() {
+  // font-size: nb-theme(font-size-sm);
+  // color:  nb-theme(header-fg);
+
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  
+  .info-version {
+    order: 2;
+  }
+  img {
+    order: 1;
+    width: 2.6rem;
+    &.black-and-white {
+      display: block;
+    }
+  }
+}

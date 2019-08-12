@@ -1,0 +1,146 @@
+// .lamb-link {
+//   cursor: pointer;
+//   color: #007bff !important;
+//   &:hover {
+//     color: #007bff !important;
+//     text-decoration: underline !important;
+//   }
+// }
+
+// .logo {
+//   width: 12rem;
+// }
+// .title {
+//   font-weight: 700;
+//   font-size: 2rem;
+// }
+// .sub-title {
+//   margin-bottom: 1rem;
+// }
+// .accept-group {
+//   margin: 1rem 0;
+// }
+// .content-login-page {
+//   width: 30rem;
+//   padding: 1.25rem;
+//   background-color: rgba($color: #2f557f, $alpha: 0.05);
+//   margin: auto;
+//   margin-top: 10%;
+//   box-shadow: 0.3rem 0.3rem rgba($color: #2f557f, $alpha: 0.5);
+// }
+
+// .btn-login-oauth-lamb {
+//   width: 10rem;
+//   height: 10rem;
+//   border-radius: 0px;
+//   border-radius: 50%;
+// }
+
+// img.btn-login-oauth-upeu {
+//   width: 10rem;
+//   border-radius: 50%;
+//   cursor: pointer;
+// }
+
+
+.lamb-link {
+  font-weight: lighter ;
+  font-size: 22px;
+  cursor: pointer;
+  color:#FFA92D !important;
+  &:hover {
+    color: #FFA92D !important;
+    text-decoration: underline !important;
+  }
+}
+
+.lamb-link2 {
+  font-weight: lighter ;
+  font-size: 22px;
+  color:#FFA92D !important;
+}
+
+.sub-title{
+  font-family: 'Roboto', sans-serif;
+  font-weight: lighter ;
+  color: white;
+  text-align: center;
+  font-size: 17px;
+}
+
+.lamb-all{
+  background-image: url('/assets/images/covers/oauth.png') ;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  position: fixed;
+  width:100%;
+  height:100%;
+}
+
+.lamb-connet{
+  padding: 0%;
+  cursor: pointer;
+}
+
+.logo {
+    padding: auto;
+    text-align: center;
+    & .full-color {
+      width: 15rem;
+    }
+  }
+  
+  .content-login-page {
+    position: absolute;
+	  top:55%;
+		left:50%;
+		width:400px;
+    margin-left:-200px;
+		height:300px;
+		margin-top:-150px;
+    padding:5px;
+    
+  }
+
+.logo-iasd {
+    position: fixed;
+    width: auto;
+    z-index: 0.1;
+    bottom: 1.8rem;
+}
+
+.lamb-icon{
+  width: 110px;
+  height: 110px;
+}
+
+.right {
+  right: 1.2rem;
+}
+
+
+  /* Por debajo de 700px */
+  @media screen and (max-width: 1024px){
+    .logo-iasd {
+      position: fixed;
+      z-index: 0.1;
+      left: 50%;
+      right: 50%; 
+    } 
+  
+    .iasdLogo{
+      position: fixed;
+      top:55%;
+      left:50%;
+      width:100px;
+      margin-left:-50px;
+      height:100px;
+      margin-top:170px;
+    }
+
+    .logo-icon{
+      width: 1rem;
+    }
+}

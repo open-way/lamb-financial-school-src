@@ -1,0 +1,33 @@
+<nb-layout>
+  <nb-layout-header fixed>
+    <lamb-header [position]="(sidebar?.id === 'left' ? 'normal': 'inverse')"></lamb-header>
+  </nb-layout-header>
+
+  <!-- sidebar -->
+  <nb-sidebar class="menu-sidebar" tag="menu-sidebar" responsive [right]="sidebar?.id === 'right'">
+
+    <!-- header -->
+    <nb-sidebar-header>
+      <lamb-sidebar-header></lamb-sidebar-header>
+    </nb-sidebar-header>
+
+    <!-- body -->
+    <lamb-sidebar-content></lamb-sidebar-content>
+
+    <!-- footer -->
+    <nb-sidebar-footer fixed [ngStyle]="{'text-align': 'center'}">
+      <lamb-sidebar-footer></lamb-sidebar-footer>
+    </nb-sidebar-footer>
+
+  </nb-sidebar>
+
+
+  <nb-layout-column>
+    <router-outlet></router-outlet>
+    <!-- <lamb-identity-iasd-logo [position]="sidebar?.id"></lamb-identity-iasd-logo> -->
+  </nb-layout-column>
+
+  <!-- sidebar right -->
+  <!-- <nb-sidebar class="right-sidebar" responsive tag="right-sidebar" [end]="true">
+  </nb-sidebar> -->
+</nb-layout>

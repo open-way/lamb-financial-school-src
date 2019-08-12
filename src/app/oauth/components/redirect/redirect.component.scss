@@ -1,0 +1,43 @@
+
+
+.loader {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background: rgb(245, 245, 245);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading {
+    width: 240px;
+    height: 4px;
+    background: #cfcfcf;
+    margin-top: 30px;
+    position: relative;
+    overflow: hidden;
+}
+.loading::after {
+    content: '';
+    width: 135px;
+    height: 4px;
+    position: absolute;
+    top: 0px;
+    background: #4DB1C5;
+    animation: animation 1.5s infinite ease;
+}
+@keyframes animation {
+	0% {
+        transform: translateX(-15px);
+    }
+    50% {
+        transform: translateX(105px);
+    }
+    100% {
+        transform: translateX(-15px);
+    }
+}

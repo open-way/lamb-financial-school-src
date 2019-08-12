@@ -1,0 +1,49 @@
+// @import '~lamb-web-lib/lib/styles/themes/corporate';
+// @import '~lamb-web-lib/lib/styles/themes/default';
+@import '~@nebular/theme/styles/theming';
+@import '~@nebular/theme/styles/themes/default';
+@import '~@nebular/theme/styles/themes/dark';
+
+// @import '~lamb-web-lib/lib/styles/themes';
+
+$nb-enabled-themes: (
+    // default
+    // lamb-default, lamb-corporate,
+    // lamb-emperor, lamb-grapevine, lamb-campfire,
+    // lamb-denim, lamb-earth, lamb-earth,
+    // lamb-ming, lamb-tree-frog
+);
+
+// $denim: (
+//     sidebar-header-gap: 1.8rem,
+
+//     header-bg: #2f557f,
+//     header-fg: #f7fafb,
+//     color-primary: #2f557f,
+// );
+
+// $ming: (
+//     sidebar-header-gap: 1.8rem,
+//     header-height: 3.5rem,
+//     layout-bg:#fbf9f3
+// );
+
+
+$nb-themes: nb-register-theme((), default, default);
+$nb-themes: nb-register-theme((
+    // layout-padding: 2.25rem 2.25rem 0.75rem,
+    layout-padding: 1.25rem 1.25rem 0.75rem,
+), dark, dark);
+
+// $nb-themes: nb-register-theme((), lamb-default, lamb-default);
+// $nb-themes: nb-register-theme((), lamb-corporate, lamb-default);
+
+// $nb-themes: nb-register-theme($theme-emperor, lamb-emperor, lamb-default);
+// $nb-themes: nb-register-theme($theme-grapevine, lamb-grapevine, lamb-default);
+
+// $nb-themes: nb-register-theme($theme-campfire, lamb-campfire, lamb-default);
+// $nb-themes: nb-register-theme(map-merge($theme-denim, $denim), lamb-denim, lamb-default);
+// $nb-themes: nb-register-theme($theme-earth, lamb-earth, lamb-default);
+// $nb-themes: nb-register-theme(map-merge($theme-ming, $ming), lamb-ming, lamb-default);
+// $nb-themes: nb-register-theme($theme-tree-frog, lamb-tree-frog, lamb-default);
+
