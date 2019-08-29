@@ -25,11 +25,13 @@
                 [name]="user?.full_name" [title]="user?.email" [picture]="user?.picture"></nb-user>
         </nb-action>
         <nb-action class="control-item">
-            <lamb-identity-enterprise [onlyId]="userPictureOnly" [id]="enterprise?.entity_id" [name]="enterprise?.entity_name">
+            <lamb-identity-enterprise [nbContextMenu]="configEnterprise" nbContextMenuTag="context-config-enterprise"
+                [onlyId]="userPictureOnly" [id]="enterprise?.entity_id" [name]="enterprise?.entity_name">
             </lamb-identity-enterprise>
         </nb-action>
         <nb-action class="control-item">
-            <lamb-identity-enterprise [onlyId]="userPictureOnly" [id]="enterprise?.departament_id" [name]="enterprise?.departament_name">
+            <lamb-identity-enterprise [onlyId]="userPictureOnly" [id]="enterprise?.departament_id"
+                [name]="enterprise?.departament_name">
             </lamb-identity-enterprise>
         </nb-action>
         <!--nb-action class="control-item lamb-time-other-options">

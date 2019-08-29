@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject, Input, OnDestroy } from '@angular/core';
-import { NbSidebarService, NbMenuService, NbMediaBreakpointsService } from '@nebular/theme';
+import { NbSidebarService, NbMenuService, NbMediaBreakpointsService, NbDialogService } from '@nebular/theme';
 import { UserDataService } from '@providers/services';
-import { map, filter, takeUntil } from 'rxjs/operators';
+import { map, filter, takeUntil, debounceTime } from 'rxjs/operators';
 import { DOCUMENT } from '@angular/common';
 import { TOKEN_LAMB_SHELL_APP_URL } from '../../../oauth/utils';
 import { LambOAuthStoreService, UpeuOAuthStoreService } from '../../../oauth/providers/store';
@@ -12,6 +12,7 @@ import { NbJSThemeOptions } from '@nebular/theme/services/js-themes/theme.option
 import { environment } from '@env/environment';
 import { StateService } from 'app/core/shared/state.service';
 import { Subject } from 'rxjs';
+import { ChangeEnterpriseModalComponent } from './change-enterprise-modal/change-enterprise-modal.component';
 
 @Component({
   selector: 'lamb-header',
@@ -25,17 +26,19 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   public theme: NbJSThemeOptions;
 
-  public userMenu = [{ title: 'Profile', data: 'profile' }];
+  public userMenu = [{ icon: 'person-outline',title: 'Profile', data: 'profile' }];
+  public configEnterprise = [{ icon: 'settings-2-outline',title: 'Configuración de entidad', data: 'changeenterprise' }];
   public enterprise: any;
   @Input() position = 'normal';
 
   constructor(private sidebarService: NbSidebarService, @Inject(DOCUMENT) private document: any,
-              @Inject(TOKEN_LAMB_SHELL_APP_URL) private tokenLambShellAppUrl: string, private nbMenuService: NbMenuService,
-              private lambOAuthStoreService: LambOAuthStoreService, protected router: Router,
-              private userDataService: UserDataService, private upeuUserDataService: UpeuUserDataService,
-              private usersThemesService: UsersThemesService, private upeuOAuthStoreService: UpeuOAuthStoreService,
-              private themeService: NbThemeService, private stateService: StateService,
-              private breakpointService: NbMediaBreakpointsService,
+    @Inject(TOKEN_LAMB_SHELL_APP_URL) private tokenLambShellAppUrl: string, private nbMenuService: NbMenuService,
+    private lambOAuthStoreService: LambOAuthStoreService, protected router: Router,
+    private userDataService: UserDataService, private upeuUserDataService: UpeuUserDataService,
+    private usersThemesService: UsersThemesService, private upeuOAuthStoreService: UpeuOAuthStoreService,
+    private themeService: NbThemeService, private stateService: StateService,
+    private breakpointService: NbMediaBreakpointsService,
+    private nbDialogService: NbDialogService,
   ) { }
 
   ngOnInit() {
@@ -58,6 +61,24 @@ export class HeaderComponent implements OnInit, OnDestroy {
       .subscribe(data => {
         if (data === 'log-out') {
           // this.logout();
+        }
+      });
+
+    this.nbMenuService.onItemClick()
+      .pipe(
+        filter(({ tag }) => tag === 'context-config-enterprise'),
+        debounceTime(500),
+        map(({ item: { data } }) => data),
+        takeUntil(this.destroy$),
+      )
+      .subscribe(data => {
+        if (data === 'changeenterprise') {
+          const modal = this.nbDialogService.open(ChangeEnterpriseModalComponent);
+          modal.onClose.subscribe(res => {
+            if (!res.cancel) {
+              window.location.reload();
+            }
+          }, err => { });
         }
       });
 

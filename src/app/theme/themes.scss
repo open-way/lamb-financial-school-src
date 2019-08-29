@@ -33,6 +33,11 @@ $nb-themes: nb-register-theme((), default, default);
 $nb-themes: nb-register-theme((
     // layout-padding: 2.25rem 2.25rem 0.75rem,
     layout-padding: 1.25rem 1.25rem 0.75rem,
+    // text-subtitle-font-size: 0.9375rem,
+    text-subtitle-font-size: 0.8375rem,
+    // card-padding: 1rem 1.25rem,
+    card-padding: 0.7rem 0.95rem,
+
 ), dark, dark);
 
 // $nb-themes: nb-register-theme((), lamb-default, lamb-default);

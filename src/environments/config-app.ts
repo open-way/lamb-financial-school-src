@@ -18,5 +18,5 @@ export const upeuCredentialsApp = {
     client_id: '5Tv4JZDW7aMGtw8drZ68ivOD5fgb3n81UhK3p4eX',
     // tslint:disable-next-line:max-line-length
     client_secret: 'U6VzW2r5ZLnQMOagtt3f3XAkKg16sVPfbZiDjSZRVIlm3OXdmEgqpkSVsr0XU1JEmXP1pxvYz6bP8HahA7Xx5gO3LC1edinLEJ5gOUxr3LChAMMBbIDd0zbiqTBDFQis', /** Esto es vulnerable */
-    redirect_uri: 'http://localhost:4200/oauth/redirect',
+    redirect_uri: 'http://localhost:4400/oauth/redirect',
 };

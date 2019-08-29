@@ -8,7 +8,7 @@ import {
 import {
     NbThemeModule, NbLayoutModule, NbCardModule,
     NbSidebarModule, NbMenuModule, NbUserModule, NbActionsModule,
-    NbContextMenuModule, NbDialogModule, NbIconModule,
+    NbContextMenuModule, NbDialogModule, NbIconModule, NbButtonModule, NbSelectModule, NbSpinnerModule,
 } from '@nebular/theme';
 
 import { CommonModule } from '@angular/common';
@@ -24,8 +24,12 @@ import {
 import { ToastrModule } from 'ngx-toastr';
 import { StateService } from './shared/state.service';
 import { SharedModule } from '../modules/shared/shared.module';
-import { UsersThemesService } from '@providers/services';
+import {
+    UsersThemesService, MyDepartmentService,
+    MyEntityDepartmentsService, MyEntitiesService,
+} from '@providers/services';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
+import { ChangeEnterpriseModalComponent } from './main-page/header/change-enterprise-modal/change-enterprise-modal.component';
 
 const BASE_MODULES = [
     CommonModule,
@@ -36,6 +40,7 @@ const BASE_MODULES = [
 
 const NB_MODULES: any[] = [
     // NbThemeModule.forRoot({ name: 'lamb-default' }),
+    // NbThemeModule.forRoot({ name: 'default' }),
     NbThemeModule.forRoot({ name: 'dark' }),
     NbLayoutModule,
     NbCardModule,
@@ -48,6 +53,9 @@ const NB_MODULES: any[] = [
 
     NbEvaIconsModule,
     NbIconModule,
+    NbButtonModule,
+    NbSelectModule,
+    NbSpinnerModule,
 ];
 
 const CORE_COMPONENTS: any[] = [
@@ -59,6 +67,8 @@ const CORE_COMPONENTS: any[] = [
     SidebarContentComponent,
     SidebarFooterComponent,
     SidebarHeaderComponent,
+
+    ChangeEnterpriseModalComponent,
 ];
 
 const LAMB_MODULES: any[] = [
@@ -79,6 +89,8 @@ const PROVIDERS: any[] = [
 
     StateService,
     UsersThemesService,
+    MyDepartmentService,
+    MyEntityDepartmentsService, MyEntitiesService,
 ];
 
 @NgModule({
@@ -96,6 +108,9 @@ const PROVIDERS: any[] = [
     ],
     providers: [
         ...PROVIDERS,
+    ],
+    entryComponents: [
+        ChangeEnterpriseModalComponent,
     ],
 })
 export class CoreModule { }
