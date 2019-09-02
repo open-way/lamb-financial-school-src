@@ -37,7 +37,7 @@
 
                             <lamb-search fieldSize="small" [isLoading]="loadingSearchCliente">
                                 <input type="text" fullWidth fieldSize="small" nbInput placeholder="Buscar..."
-                                    class="lamb-search" [ngbTypeahead]="searchCliente"
+                                    class="lamb-search" [ngbTypeahead]="searchCliente" container="body"
                                     [inputFormatter]="formatterCliente" [resultTemplate]="rtCliente">
                             </lamb-search>
                         </div>
