@@ -5,28 +5,41 @@
         Agregar venta
     </nb-card-header>
     <nb-card-body>
-{{ saleServiceForm.value | json }}
         <form [formGroup]="saleServiceForm">
             <div class="row">
                 <div class="offset-md-3 col-md-3">
                     <div class="form-group row">
                         <label for="id_tipo_documento"
-                            class="col-md-3 col-form-label col-form-label-sm">Documento</label>
+                            class="col-md-3 col-form-label col-form-label-sm text-right">Documento</label>
                         <div class="col-md-9">
-                            <nb-select placeholder="Tipo de documento" fullWidth [size]="'small'" formControlName="id_comprobante">
+                            <!-- <select name="" formControlName="id_comprobante">
+                                <option *ngFor="let item of tipoComprobantes" [value]="item.id_comprobante">
+                                        {{ item.id_comprobante }}-{{ item.nombre }}
+                                </option>
+                            </select> -->
+                            <nb-select placeholder="Tipo de documento" fullWidth [size]="'small'"
+                                formControlName="id_comprobante">
                                 <nb-option *ngFor="let item of tipoComprobantes" [value]="item.id_comprobante">
                                     {{ item.id_comprobante }}-{{ item.nombre }}
                                 </nb-option>
-                                <!-- <nb-option value="">Boleta</nb-option> -->
                             </nb-select>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="form-group row">
-                        <label for="id_cliente" class="col-md-3 col-form-label col-form-label-sm">Cliente</label>
+                        <label for="id_cliente"
+                            class="col-md-3 col-form-label col-form-label-sm text-right">Cliente</label>
                         <div class="col-md-9">
-                            <input type="text" placeholder="Buscar" fullWidth nbInput fieldSize="small">
+                            <ng-template #rtCliente let-r="result" let-t="term">{{ r.nom_persona }}
+                                ({{ r.num_documento }})
+                            </ng-template>
+
+                            <lamb-search fieldSize="small" [isLoading]="loadingSearchCliente">
+                                <input type="text" fullWidth fieldSize="small" nbInput placeholder="Buscar..."
+                                    class="lamb-search" [ngbTypeahead]="searchCliente"
+                                    [inputFormatter]="formatterCliente" [resultTemplate]="rtCliente">
+                            </lamb-search>
                         </div>
                     </div>
                 </div>
@@ -34,15 +47,20 @@
             <div class="row">
                 <div class="offset-md-3 col-md-3">
                     <div class="form-group row">
-                        <label for="id_cliente" class="col-md-3 col-form-label col-form-label-sm">Artículo</label>
+                        <label for="id_cliente"
+                            class="col-md-3 col-form-label col-form-label-sm text-right">Servicio</label>
                         <div class="col-md-9">
-                            <input type="text" placeholder="Buscar" fullWidth nbInput fieldSize="small">
+                            <lamb-search fieldSize="small">
+                                <input type="text" fullWidth fieldSize="small" nbInput placeholder="Buscar..."
+                                    class="lamb-search">
+                            </lamb-search>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="form-group row">
-                        <label for="id_cliente" class="col-md-3 col-form-label col-form-label-sm">Cantidad</label>
+                        <label for="id_cliente"
+                            class="col-md-3 col-form-label col-form-label-sm text-right">Cantidad</label>
                         <div class="col-md-5">
                             <input type="text" class="text-right" placeholder="00.00" fullWidth nbInput
                                 fieldSize="small">

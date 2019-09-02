@@ -1,11 +1,11 @@
-<nb-card [nbSpinner]="loadingSave">
+<nb-card>
     <nb-card-header>
         <div>
             <nb-icon icon="color-palette-outline"></nb-icon>
             Cambiar mi entidad y departamento.
         </div>
     </nb-card-header>
-    <nb-card-body [nbSpinner]="loadingSave">
+    <nb-card-body [nbSpinner]="loadingSave" nbSpinnerStatus="primary">
         <form [formGroup]="enterpriseForm">
             <div class="modal-body">
                 <div class="form-group row">

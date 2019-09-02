@@ -1,15 +1,16 @@
 import { NgModule } from '@angular/core';
 // import { CommonModule } from '@angular/common';
 
-import { SellOfArticlesRoutingModule } from './sell-of-articles-routing.module';
-import { SellOfArticlesComponent } from './sell-of-articles.component';
+import { SellOfServicesRoutingModule } from './sell-of-services-routing.module';
+import { SellOfServicesComponent } from './sell-of-services.component';
 import { FormSellNewComponent } from './components';
 import { NbIconModule, NbInputModule, NbSelectModule, NbButtonModule } from '@nebular/theme';
 import { SharedModule } from '../../shared/shared.module';
-import { TipoComprobantesService } from '@providers/services';
+import { NaturalLegalPersonsService, TipoComprobantesService } from '@providers/services';
+import { NgbTypeaheadModule } from '@ng-bootstrap/ng-bootstrap';
 
 const COMPONENTS: any[] = [
-  SellOfArticlesComponent,
+  SellOfServicesComponent,
   FormSellNewComponent,
 ];
 
@@ -20,8 +21,13 @@ const NB_NEBULAR: any[] = [
   NbButtonModule,
 ];
 
+const NGB_NEBULAR: any[] = [
+  NgbTypeaheadModule,
+];
+
 const SERVICES: any[] = [
   TipoComprobantesService,
+  NaturalLegalPersonsService,
 ];
 
 
@@ -32,10 +38,11 @@ const SERVICES: any[] = [
   imports: [
     SharedModule,
     ...NB_NEBULAR,
-    SellOfArticlesRoutingModule,
+    ...NGB_NEBULAR,
+    SellOfServicesRoutingModule,
   ],
   providers: [
     ...SERVICES,
   ],
 })
-export class SellOfArticlesModule { }
+export class SellOfServicesModule { }

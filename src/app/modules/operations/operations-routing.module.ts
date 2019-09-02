@@ -8,8 +8,8 @@ const routes: Routes = [
     component: OperationsComponent,
     children: [
       {
-        path: 'sell-of-articles',
-        loadChildren: 'app/modules/operations/sell-of-articles/sell-of-articles.module#SellOfArticlesModule',
+        path: 'sell-of-services',
+        loadChildren: () => import('./sell-of-services/sell-of-services.module').then(m => m.SellOfServicesModule),
       },
     ],
   },

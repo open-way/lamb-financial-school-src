@@ -11,7 +11,11 @@ const routes: Routes = [
     children: [
       {
         path: 'operations',
-        loadChildren: 'app/modules/operations/operations.module#OperationsModule',
+        loadChildren: () => import('./operations/operations.module').then(m => m.OperationsModule),
+      },
+      {
+        path: 'settings',
+        loadChildren: () => import('./settings/settings.module').then(m => m.SettingsModule),
       },
     ],
   },

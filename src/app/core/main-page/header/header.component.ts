@@ -26,8 +26,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   public theme: NbJSThemeOptions;
 
-  public userMenu = [{ icon: 'person-outline',title: 'Profile', data: 'profile' }];
-  public configEnterprise = [{ icon: 'settings-2-outline',title: 'Configuración de entidad', data: 'changeenterprise' }];
+  public userMenu = [
+    { icon: 'person-outline', title: 'Mi perfil', data: 'profile' },
+    { icon: 'settings-2-outline', title: 'Mi entidad', data: 'changeenterprise' }
+  ];
+
   public enterprise: any;
   @Input() position = 'normal';
 
@@ -61,18 +64,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
       .subscribe(data => {
         if (data === 'log-out') {
           // this.logout();
-        }
-      });
-
-    this.nbMenuService.onItemClick()
-      .pipe(
-        filter(({ tag }) => tag === 'context-config-enterprise'),
-        debounceTime(500),
-        map(({ item: { data } }) => data),
-        takeUntil(this.destroy$),
-      )
-      .subscribe(data => {
-        if (data === 'changeenterprise') {
+        } else if (data === 'changeenterprise') {
           const modal = this.nbDialogService.open(ChangeEnterpriseModalComponent);
           modal.onClose.subscribe(res => {
             if (!res.cancel) {

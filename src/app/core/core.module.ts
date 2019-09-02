@@ -40,8 +40,8 @@ const BASE_MODULES = [
 
 const NB_MODULES: any[] = [
     // NbThemeModule.forRoot({ name: 'lamb-default' }),
-    // NbThemeModule.forRoot({ name: 'default' }),
-    NbThemeModule.forRoot({ name: 'dark' }),
+    NbThemeModule.forRoot({ name: 'default' }),
+    // NbThemeModule.forRoot({ name: 'dark' }),
     NbLayoutModule,
     NbCardModule,
     NbSidebarModule.forRoot(),

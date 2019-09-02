@@ -10,11 +10,11 @@ const routes: Routes = [
     canActivate: [
       AuthenticationGuardService,
     ],
-    loadChildren: 'app/modules/modules.module#ModulesModule',
+    loadChildren: () => import('./modules/modules.module').then(m => m.ModulesModule),
   },
   {
-  path: 'oauth',
-  loadChildren: 'app/oauth/oauth.module#OauthModule',
+    path: 'oauth',
+    loadChildren: () => import('./oauth/oauth.module').then(m => m.OauthModule),
   },
 ];
 

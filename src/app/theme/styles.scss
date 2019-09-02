@@ -12,7 +12,7 @@
 // install the framework
 @include nb-install() {
   @include nb-theme-global();
-  @include lamb-override-table();
+  @include lamb-overrides-theme();
 
   // @include lamb-theme-global();
 }

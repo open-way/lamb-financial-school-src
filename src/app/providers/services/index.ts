@@ -10,4 +10,6 @@ export * from './setup/my-entities.service';
 
 export * from './accounting/tipo-comprobantes.service';
 
+export * from './sales/natural-legal-persons.service';
+
 export * from './valid-tokens.service';

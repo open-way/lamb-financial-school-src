@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { SellOfArticlesComponent } from './sell-of-articles.component';
-import { FormSellNewComponent } from './components/form-sell-new/form-sell-new.component';
+import { ServicesComponent } from './services.component';
+import { ListaServicesComponent, FormSellNewComponent } from './components';
 
 const routes: Routes = [
   {
     path: '',
-    component: SellOfArticlesComponent,
+    component: ServicesComponent,
     children: [
       {
         path: 'new',
@@ -14,9 +14,13 @@ const routes: Routes = [
       },
       {
         path: '',
-        pathMatch: 'full',
-        redirectTo: 'new',
+        component: ListaServicesComponent,
       },
+      // {
+      //   path: '',
+      //   pathMatch: 'full',
+      //   redirectTo: 'new',
+      // },
     ],
   },
 ];
@@ -25,4 +29,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class SellOfArticlesRoutingModule { }
+export class ServicesRoutingModule { }

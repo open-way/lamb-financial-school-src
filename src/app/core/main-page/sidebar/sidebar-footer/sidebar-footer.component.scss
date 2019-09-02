@@ -7,7 +7,8 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  
+  font-family: nb-theme(select-text-font-family);
+  font-weight: nb-theme(select-text-font-weight);
   .info-version {
     order: 2;
   }
@@ -16,6 +17,27 @@
     width: 2.6rem;
     &.black-and-white {
       display: block;
+    }
+    &.black {
+      display: none;
+    }
+    @include nb-for-theme(default) {
+      &.black-and-white {
+        display: none;
+      }
+      
+      &.black {
+        display: block;
+      }
+    }
+    @include nb-for-theme(corporate) {
+      &.black-and-white {
+        display: none;
+      }
+      
+      &.black {
+        display: block;
+      }
     }
   }
 }

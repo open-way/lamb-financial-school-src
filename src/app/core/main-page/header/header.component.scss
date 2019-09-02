@@ -46,15 +46,24 @@
         display: none;
       }
       
-      // @include nb-for-theme(lamb-default) {
-      //   &.black-and-white {
-      //     display: none;
-      //   }
+      @include nb-for-theme(default) {
+        &.black-and-white {
+          display: none;
+        }
         
-      //   &.full-color {
-      //     display: block;
-      //   }
-      // }
+        &.full-color {
+          display: block;
+        }
+      }
+      @include nb-for-theme(corporate) {
+        &.black-and-white {
+          display: none;
+        }
+        
+        &.full-color {
+          display: block;
+        }
+      }
     }
 
     span {
@@ -127,7 +136,7 @@
     }
     &.left {
       .navigation {
-        // padding-right: nb-theme(header-padding);
+        padding-right: nb-theme(header-padding);
         padding-left: nb-theme(header-padding);
       }
       .navigation-end { 

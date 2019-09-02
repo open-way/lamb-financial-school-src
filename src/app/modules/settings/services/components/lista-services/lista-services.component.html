@@ -1,0 +1,74 @@
+<nb-card>
+    <nb-card-header>
+        <nb-icon icon="file-text-outline"></nb-icon>
+        Lista de servicios
+    </nb-card-header>
+    <nb-card-body>
+
+        <div class="form-group row">
+            <div class="offset-md-6 col-md-4 text-right">
+                <lamb-search fieldSize="small">
+                    <input type="text" fullWidth fieldSize="small" shape="semi-round" nbInput
+                        placeholder="Buscar..." class="lamb-search">
+                </lamb-search>
+            </div>
+            <div class="col-md-2">
+                <button nbButton size="small">
+                    <nb-icon icon="plus-outline"></nb-icon>
+                    Agregar
+                </button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="table-reponsive">
+                    <table class="table table-sm table-hover">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Artículo</th>
+                                <th>Cantidad</th>
+                                <th class="text-right">Costo</th>
+                                <th class="text-right">Descuento</th>
+                                <th class="text-right">Subtotal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Formato de solicitud XXX</td>
+                                <td>2</td>
+                                <td class="text-right">2.00</td>
+                                <td class="text-right">0.00</td>
+                                <td class="text-right">4.00</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Formato de beca XXX</td>
+                                <td>2</td>
+                                <td class="text-right">5.50</td>
+                                <td class="text-right">0.00</td>
+                                <td class="text-right">11.00</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Formato de beca XXX</td>
+                                <td>2</td>
+                                <td class="text-right">5.50</td>
+                                <td class="text-right">0.00</td>
+                                <td class="text-right">11.00</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr class="text-right">
+                                <th colspan="5">Total</th>
+                                <th>15.00</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </nb-card-body>
+</nb-card>
